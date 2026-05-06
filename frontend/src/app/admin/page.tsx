@@ -38,7 +38,7 @@ export default function AdminDashboard() {
         setOrders(data);
       } else if (activeTab === 'products') {
         const data = await fetchProducts();
-        setProducts(data);
+        setProducts(data.products || []);
       }
     } catch (error) {
       toast.error('Failed to load admin data');
