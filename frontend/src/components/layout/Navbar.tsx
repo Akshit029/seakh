@@ -18,12 +18,14 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
   const { toggleCart, getItemCount } = useCartStore();
   const { user } = useAuthStore();
   const itemCount = getItemCount();
 
   useEffect(() => {
+    setIsMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -99,7 +101,7 @@ export default function Navbar() {
                 className="relative text-[#5C4A37] hover:text-[#C9A96E] transition-colors duration-200"
               >
                 <ShoppingBag size={19} strokeWidth={1.5} />
-                {itemCount > 0 && (
+                {isMounted && itemCount > 0 && (
                   <motion.span
                     key={itemCount}
                     initial={{ scale: 0 }}
