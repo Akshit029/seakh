@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --beige: #F5F0E6;
+  --cream: #FAF7F2;
+  --soft-brown: #C8B6A6;
+  --muted-gold: #C9A96E;
+  --deep-brown: #5C4A37;
+  --warm-white: #FFFEF9;
+  --charcoal: #2C2416;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--soft-brown);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-gold);
+}
+
+/* Selection */
+::selection {
+  background: var(--muted-gold);
+  color: white;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#C9A96E] text-white px-8 py-3 rounded-none font-medium tracking-widest text-sm uppercase transition-all duration-300 hover:bg-[#b8944f] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply border border-[#C9A96E] text-[#C9A96E] px-8 py-3 rounded-none font-medium tracking-widest text-sm uppercase transition-all duration-300 hover:bg-[#C9A96E] hover:text-white;
+  }
+
+  .btn-dark {
+    @apply bg-[#2C2416] text-white px-8 py-3 rounded-none font-medium tracking-widest text-sm uppercase transition-all duration-300 hover:bg-[#5C4A37] hover:shadow-lg;
+  }
+
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl text-[#2C2416] leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-[#C8B6A6] tracking-widest text-xs uppercase font-medium;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .gold-line {
+    @apply w-12 h-0.5 bg-[#C9A96E] mx-auto;
+  }
+
+  .gold-line-left {
+    @apply w-12 h-0.5 bg-[#C9A96E];
+  }
+
+  .input-luxury {
+    @apply w-full bg-[#FAF7F2] border border-[#C8B6A6] px-4 py-3 text-[#2C2416] placeholder-[#C8B6A6] focus:outline-none focus:border-[#C9A96E] transition-colors duration-200 text-sm;
+  }
+}
+
+/* Grain texture overlay */
+.grain-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.03;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
