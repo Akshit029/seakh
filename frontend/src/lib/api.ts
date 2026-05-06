@@ -56,4 +56,20 @@ export const fetchMe = () =>
 export const updateProfile = (data: any) =>
   api.put('/auth/profile', data).then((r) => r.data);
 
+// ── Admin ──────────────────────────────────────────────────
+export const fetchAllOrders = () =>
+  api.get('/orders').then((r) => r.data);
+
+export const updateOrderStatus = (id: string, status: string) =>
+  api.put(`/orders/${id}/status`, { status }).then((r) => r.data);
+
+export const createAdminProduct = (data: any) =>
+  api.post('/products', data).then((r) => r.data);
+
+export const updateAdminProduct = (id: string, data: any) =>
+  api.put(`/products/${id}`, data).then((r) => r.data);
+
+export const deleteAdminProduct = (id: string) =>
+  api.delete(`/products/${id}`).then((r) => r.data);
+
 export default api;

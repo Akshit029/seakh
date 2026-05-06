@@ -17,7 +17,10 @@ const register = async (req, res) => {
       return res.status(400).json({ message: 'User already exists with this email' });
     }
 
-    const user = await User.create({ name, email, password });
+    const isFirstAccount = (await User.countDocuments({})) === 0;
+    const role = isFirstAccount ? 'admin' : 'user';
+
+    const user = await User.create({ name, email, password, role });
     const token = generateToken(user._id);
 
     res.cookie('token', token, {

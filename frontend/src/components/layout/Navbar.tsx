@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, User, Menu, X, Search } from 'lucide-react';
+import { ShoppingBag, User, Menu, X, Search, Shield } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
 import { useAuthStore } from '@/store/authStore';
 
@@ -93,6 +93,16 @@ export default function Navbar() {
               >
                 <User size={19} strokeWidth={1.5} />
               </Link>
+
+              {isMounted && user?.role === 'admin' && (
+                <Link
+                  href="/admin"
+                  aria-label="Admin Dashboard"
+                  className="text-[#C9A96E] hover:text-[#b8944f] transition-colors duration-200"
+                >
+                  <Shield size={19} strokeWidth={1.5} />
+                </Link>
+              )}
 
               <button
                 id="cart-button"
