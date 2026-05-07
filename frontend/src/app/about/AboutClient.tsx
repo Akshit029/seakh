@@ -14,7 +14,7 @@ const timeline = [
 ];
 
 const team = [
-  { name: 'Aarav Kapoor', role: 'Founder & Chief Curator', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400', bio: 'Former literature professor. Believes every book deserves a ceremony.' },
+  { name: 'Akshit Chadgal', role: 'Founder & Chief Curator', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400', bio: 'Former literature professor. Believes every book deserves a ceremony.' },
   { name: 'Meera Iyer', role: 'Head of Curation & Partnerships', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400', bio: 'Bookshop owner turned curator. She has read over 800 books and counting.' },
   { name: 'Rohan Das', role: 'Creative Director', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400', bio: 'Designer obsessed with the intersection of aesthetics and meaningful living.' },
 ];

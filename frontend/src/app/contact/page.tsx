@@ -18,9 +18,9 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const contactInfo = [
-  { icon: Mail, label: 'Email Us', value: 'hello@seakh.in', sub: 'We reply within 24 hours' },
-  { icon: Phone, label: 'Call Us', value: '+91 98765 43210', sub: 'Mon–Sat, 10am–6pm IST' },
-  { icon: MapPin, label: 'Studio', value: 'Bengaluru, Karnataka', sub: 'By appointment only' },
+  { icon: Mail, label: 'Email Us', value: 'support.seakh@gmail.com', sub: 'We reply within 24 hours' },
+  // { icon: Phone, label: 'Call Us', value: '+91 98765 43210', sub: 'Mon–Sat, 10am–6pm IST' },
+  // { icon: MapPin, label: 'Studio', value: 'Bengaluru, Karnataka', sub: 'By appointment only' },
 ];
 
 export default function ContactPage() {
@@ -83,7 +83,7 @@ export default function ContactPage() {
                 <p className="font-serif text-sm text-[#5C4A37] italic leading-relaxed">
                   &ldquo;Every reader who reaches out becomes part of the SEAKH story. We read every message personally.&rdquo;
                 </p>
-                <p className="text-[10px] tracking-widest uppercase text-[#C8B6A6] mt-3">— Aarav, Founder</p>
+                <p className="text-[10px] tracking-widest uppercase text-[#C8B6A6] mt-3">— Akshit, Founder</p>
               </div>
             </motion.div>
           </div>
